@@ -9,6 +9,7 @@
 <body>
 <% List<User> users = (List<User>) request.getAttribute("users");%>
 <% List<Task> tasks = (List<Task>) request.getAttribute("tasks");%>
+<a href="/logout">logout</a><br>
 Register user:<br>
 <form action="/userRegister" method="post">
     Name: <input type="text" name="name"/><br>

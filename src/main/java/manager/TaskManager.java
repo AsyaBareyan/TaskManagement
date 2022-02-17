@@ -60,11 +60,11 @@ public class TaskManager {
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE task SET task_status=? where id=?");
             preparedStatement.setString(1,newStatus);
             preparedStatement.setInt(2,taskId);
-            return true;
+            preparedStatement.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false;
     }
 
     public Boolean delete(int id) {

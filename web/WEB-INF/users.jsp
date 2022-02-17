@@ -9,6 +9,7 @@
 <%
     List<Task> allTasks = (List<Task>) request.getAttribute("tasks");
 %>
+<a href="/logout">logout</a><br>
 My all tasks:
 <table border="1">
 

@@ -27,14 +27,14 @@ public class ManagerHomeServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        User user = (User) session.getAttribute("user");
+
         List<Task> allTasks = taskManager.getAllTasks();
         List<User> allUsers = userManager.getAllUsers();
         req.setAttribute("tasks", allTasks);
         req.setAttribute("users", allUsers);
         req.getRequestDispatcher("/WEB-INF/manager.jsp").forward(req, resp);
-
+    }
+}
 
 //        String name = req.getParameter("name");
 //        String description = req.getParameter("description");
@@ -56,5 +56,3 @@ public class ManagerHomeServlet extends HttpServlet {
 //        req.getRequestDispatcher("/WEB-INF/managerHOME.jsp").forward(req, resp);
 //
 //    }
-    }
-}
